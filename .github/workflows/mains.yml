@@ -1,0 +1,9 @@
+- name: Cirrus Action
+  # You may pin to the exact commit or the version.
+  # uses: cirruslabs/cirrus-action@ac5191d18a9bff05ff1a38f280f2b6d768e32153
+  uses: cirruslabs/cirrus-action@v2
+  with:
+    # Cirrus CLI Version
+    version: # optional, default is latest
+    # A particular task to run. By default, Cirrus CLI runs all tasks sequentially.
+    task: # optional, default is 
