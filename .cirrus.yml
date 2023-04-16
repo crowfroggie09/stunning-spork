@@ -2,7 +2,7 @@ persistent_worker:
   isolation:
     container:
       image: debian:latest
-      cpu: 8
+      cpu: 4
       memory: 12G
       volumes:
         - /path/on/host:/path/in/container
