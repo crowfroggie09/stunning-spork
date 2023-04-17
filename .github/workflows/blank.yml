@@ -1,28 +1,8 @@
-name: publish
-on: [push]
+name: Test Suite
+on: push
 jobs:
-  # General job notes: we DON'T want to cancel any previous runs, especially in the case of a "back to snapshots" build right after a release push
-  # We specify the ubuntu version to minimize the chances we have to deal with a migration during a release
-  prepare:
-    # Notes on prepare: this job has no access to secrets, only github token. As a result, all non-core actions are centralized here
-    # This includes the tagging and drafting of release notes. Still, when possible we favor plain run of gradle tasks
-    name: prepare
-    runs-on: self-hosted
-    outputs:
-      versionType: ${{ steps.version.outputs.versionType }}
-      fullVersion: ${{ steps.version.outputs.fullVersion }}
+  test:
+    runs-on: buildjet-4vcpu-ubuntu-2204
+    name: Test
     steps:
-    - uses: actions/checkout@v2
-    - name: setup java
-      uses: actions/setup-java@v1
-      with:
-        java-version: 8
-    - name: interpret version
-      id: version
-      #we only run the qualifyVersionGha task so that no other console printing can hijack this step's output
-      #output: versionType, fullVersion
-      #fails if versionType is BAD, which interrupts the workflow
-      run: ./gradlew qualifyVersionGha
-    - name: run checks
-      id: checks
-      run: ./gradlew check
+      - uses: actions/checkout@v2
